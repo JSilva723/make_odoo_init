@@ -4,8 +4,8 @@ import shutil
 
 def ask_inputs():
     project_name = input("Please, specify Project Name: ")
-    odoo_version = input("Please, specify Odoo version (default: 17.0): ") or "17.0"
-    postgres_version = input("Please, specify PostgreSQL version (default: 13.0): ") or "13.0"
+    odoo_version = input("Please, specify Odoo version (17.0): ") or "17.0"
+    postgres_version = input("Please, specify PostgreSQL version (13.0): ") or "13.0"
     odoo_base_path = input("Please, specify odoo base path: ")
 
     while not project_name:

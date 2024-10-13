@@ -2,7 +2,7 @@
 
 ## Overview
 
-`make_init_odoo` is a CLI tool designed to scaffold Odoo projects with specific configurations. It allows users to quickly create project directories and configure essential components like Odoo version, PostgreSQL version, and the base path for Odoo.
+`make_odoo_init` is a CLI tool designed to scaffold Odoo projects with specific configurations. It allows users to quickly create project directories and configure essential components like Odoo version, PostgreSQL version, and the base path for Odoo.
 
 ## Features
 
