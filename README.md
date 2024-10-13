@@ -1,4 +1,4 @@
-# Make init Odoo
+# Make Odoo init
 
 ## Overview
 
@@ -22,8 +22,8 @@
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/make_init_odoo.git
-   cd make_init_odoo
+   git clone https://github.com/JSilva723/make_odoo_init
+   cd make_odoo_init
    ```
 
 2. Install the package:
@@ -34,10 +34,10 @@
 
 ## Usage
 
-Once installed, you can use the command `mkio` to generate a new Odoo project scaffold:
+Once installed, you can use the command `mkoi` to generate a new Odoo project scaffold:
 
 ```bash
-mkio
+mkoi
 ```
 
 This will prompt you to enter:
@@ -56,7 +56,7 @@ $ mkio
 Please, specify Project Name: my_project
 Please, specify Odoo version (default: 17.0): 16.0
 Please, specify PostgreSQL version (default: 13.0):
-Please, specify odoo base path: /home/user/odoo
+Please, specify odoo base path: /home/user/odoo/17.0
 ```
 
 ## Project Structure

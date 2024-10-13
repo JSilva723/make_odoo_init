@@ -11,17 +11,17 @@ def package_files(directory):
 extra_files = package_files('mkio/templates')
 
 setup(
-    name='make_init_odoo',
+    name='make_odoo_init',
     version='0.1',
     packages=find_packages(),
     install_requires=[],
     include_package_data=True,
     package_data={
-        'mkio': extra_files,
+        'mkoi': extra_files,
     },
     entry_points={
         'console_scripts': [
-            'mkio=mkio:main',
+            'mkoi=mkoi:main',
         ],
     },
     description='CLI Tool for scaffolding Odoo projects',
