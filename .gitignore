@@ -1,0 +1,4 @@
+# Directories created in install
+build/
+dist/
+*.egg-info/

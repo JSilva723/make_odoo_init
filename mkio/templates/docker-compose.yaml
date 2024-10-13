@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:<-mk_init_postgres_version->
+    container_name: odoo-db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
+      - /dev/shm:/dev/shm
+    ports:
+      - "5432:5432"
+    # user: "${UID}:${GID}" # for linux users
+
+  web:
+    image: <-mk_init_project_image->:<-mk_init_odoo_version->
+    container_name: odoo-web
+    depends_on:
+      - db
+    ports:
+      - "8069:8069" 
+      - "8072:8072" # longpolling
+      - "5678:5678" # debug
+    tty: true
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+      - PYTHONDONTWRITEBYTECODE=1
+    command: /usr/bin/python3 -m debugpy --listen 0.0.0.0:5678 /usr/bin/odoo --db_user=odoo --db_host=db --db_password=odoo
+    volumes:
+      - ./web/odoo.conf:/etc/odoo/odoo.conf
+      - ./web/filestore:/var/lib/odoo/filestore
+      - ./web/addons:/mnt/extra-addons
+      - /dev/shm:/dev/shm
+    # user: "${UID}:${GID}"
