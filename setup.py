@@ -8,7 +8,7 @@ def package_files(directory):
             paths.append(os.path.join('..', path, filename))
     return paths
 
-extra_files = package_files('mkio/templates')
+extra_files = package_files('mkoi/templates')
 
 setup(
     name='make_odoo_init',
