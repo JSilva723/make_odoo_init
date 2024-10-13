@@ -2,7 +2,7 @@
     "python.analysis.extraPaths": [
         "<-mk_init_odoo_base_path->",
         "<-mk_init_odoo_base_path->/addons",
-        "${env:PWD}/addons"
+        "${env:PWD}/web/addons"
     ],
     "python.languageServer": "Jedi"
 }

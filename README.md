@@ -71,6 +71,21 @@ The generated project will follow this structure:
     └── ...
 ```
 
+## Recommended Extensions for Development
+
+If you're using **Visual Studio Code** for development, we recommend using the following extensions to enhance your Python development workflow:
+
+### Pyright
+
+- **Name**: Pyright
+- **Id**: ms-pyright.pyright
+- **Description**: VS Code static type checking for Python.
+- **Version**: 1.1.383
+- **Publisher**: Microsoft
+- **VS Marketplace Link**: [Pyright - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-pyright.pyright)
+
+This extension provides static type checking for Python in VS Code, helping catch potential errors early in the development process.
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
