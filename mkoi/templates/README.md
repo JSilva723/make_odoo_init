@@ -6,7 +6,7 @@ make build
 
 ## Step 2
 Create the addons directory inside the web folder to add custom modules:
-```
+```sh
 /my_project
     ├── Dockerfile
     ├── docker-compose.yml
@@ -18,12 +18,13 @@ Create the addons directory inside the web folder to add custom modules:
 ```
 
 ## Step 3
+
 Up containers
 ```sh
 make detach # make up
 ````
 
-```
+```sh
 /my_project
     ├── .vscode
     |    ├── launch.json
@@ -40,6 +41,12 @@ make detach # make up
     └── README.md
 ```
 ***
+
+## Note
+Linux users uncomment that lines in docker-compose.yaml
+```sh
+user: "${UID}:${GID}" # for linux users
+```
 ## Help
 ```sh
 make help
