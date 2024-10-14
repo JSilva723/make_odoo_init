@@ -43,8 +43,8 @@ mkoi
 This will prompt you to enter:
 
 1. **Project Name**: The name of your new project.
-2. **Odoo Version**: The version of Odoo you want to use (default is `17.0`).
-3. **PostgreSQL Version**: The version of PostgreSQL (default is `13.0`).
+2. **Odoo Version**: The version of Odoo you want to use (`17.0`).
+3. **PostgreSQL Version**: The version of PostgreSQL (`13.0`).
 4. **Odoo Base Path**: The base path where Odoo is installed.
 
 After entering the values, the tool will generate a project structure based on the template provided in the `templates` directory.
@@ -52,10 +52,10 @@ After entering the values, the tool will generate a project structure based on t
 ## Example
 
 ```bash
-$ mkio
+$ mkoi
 Please, specify Project Name: my_project
-Please, specify Odoo version (default: 17.0): 16.0
-Please, specify PostgreSQL version (default: 13.0):
+Please, specify Odoo version (17.0):
+Please, specify PostgreSQL version (13.0):
 Please, specify odoo base path: /home/user/odoo/17.0
 ```
 
@@ -65,10 +65,15 @@ The generated project will follow this structure:
 
 ```
 /my_project
-    ├── Dockerfile
-    ├── docker-compose.yml
-    ├── README.md
-    └── ...
+   ├── .vscode
+   |    ├── launch.json
+   |    └── settings.json
+   ├── web
+   |    └── odoo.conf
+   ├── docker-compose.yml
+   ├── Dockerfile
+   ├── Makefile
+   └── README.md
 ```
 
 ## Recommended Extensions for Development
