@@ -3,13 +3,10 @@ import os
 import shutil
 
 def ask_inputs():
-    odoo_image = input("Please, specify Odoo image: ")
+    odoo_image = input("Please, specify Odoo image (odoo): ") or "odoo"
     odoo_version = input("Please, specify Odoo version (17.0): ") or "17.0"
     postgres_version = input("Please, specify PostgreSQL version (13.0): ") or "13.0"
     odoo_base_path = input("Please, specify odoo base path: ")
-
-    while not odoo_image:
-        odoo_image = input("Please, specify Odoo image: ")
 
     while not odoo_base_path:
         odoo_base_path = input("Please, specify odoo base path: ")

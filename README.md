@@ -53,7 +53,7 @@ After entering the values, the tool will generate a project structure based on t
 
 ```bash
 $ mkoi
-Please, specify Odoo image: my_project
+Please, specify Odoo image: odoo
 Please, specify Odoo version (17.0):
 Please, specify PostgreSQL version (13.0):
 Please, specify odoo base path: /home/user/odoo/17.0
