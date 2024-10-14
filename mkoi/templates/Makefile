@@ -19,7 +19,7 @@ version: ## Switch odoo version - changed files: settings.json, docker-compose.y
 	@sed -i '' "s/docker build -t \([a-zA-Z0-9_-]*\):[0-9]*\.[0-9]*/docker build -t \1:$${v}/g" Makefile;
 
 build: ## Build the Docker image
-	@docker build -t <-mk_init_project_image->:<-mk_init_odoo_version-> .
+	@docker build -t <-mk_init_odoo_image->:<-mk_init_odoo_version-> .
 
 shell: ## Open Odoo shell with connection to the PostgreSQL database
 	@docker exec -it odoo-web /usr/bin/odoo shell --db_host db -d ${DB_NAME} -r odoo -w odoo

@@ -1,4 +1,4 @@
-FROM odoo:<-mk_init_odoo_version->
+FROM <-mk_init_odoo_image->:<-mk_init_odoo_version->
 
 USER root
 

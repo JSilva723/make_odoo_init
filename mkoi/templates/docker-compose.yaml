@@ -14,7 +14,7 @@ services:
     # user: "${UID}:${GID}" # for linux users
 
   web:
-    image: <-mk_init_project_image->:<-mk_init_odoo_version->
+    image: <-mk_init_odoo_image->:<-mk_init_odoo_version->
     container_name: odoo-web
     depends_on:
       - db

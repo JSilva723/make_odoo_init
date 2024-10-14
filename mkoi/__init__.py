@@ -3,18 +3,18 @@ import os
 import shutil
 
 def ask_inputs():
-    project_name = input("Please, specify Project Name: ")
+    odoo_image = input("Please, specify Odoo image: ")
     odoo_version = input("Please, specify Odoo version (17.0): ") or "17.0"
     postgres_version = input("Please, specify PostgreSQL version (13.0): ") or "13.0"
     odoo_base_path = input("Please, specify odoo base path: ")
 
-    while not project_name:
-        project_name = input("Please, specify Project Name: ")
+    while not odoo_image:
+        odoo_image = input("Please, specify Odoo image: ")
 
     while not odoo_base_path:
         odoo_base_path = input("Please, specify odoo base path: ")
 
-    return project_name, odoo_version, postgres_version, odoo_base_path
+    return odoo_image, odoo_version, postgres_version, odoo_base_path
 
 def replace_values_in_file(file_path, replacements):
     with open(file_path, 'r') as file:
@@ -36,7 +36,7 @@ def copy_template_and_replace(template_dir, project_dir, replacements):
             replace_values_in_file(file_path, replacements)
 
 def main():
-    project_name, odoo_version, postgres_version, odoo_base_path = ask_inputs()
+    odoo_image, odoo_version, postgres_version, odoo_base_path = ask_inputs()
 
     # Get template path
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -44,12 +44,12 @@ def main():
 
     # Get path where command is executed
     root_dir = os.getcwd()
-    project_dir = os.path.join(root_dir, project_name)
+    project_dir = os.path.join(root_dir, odoo_image)
 
     replacements = {
         "<-mk_init_odoo_version->": odoo_version,
         "<-mk_init_postgres_version->": postgres_version,
-        "<-mk_init_project_image->": project_name,
+        "<-mk_init_odoo_image->": odoo_image,
         "<-mk_init_odoo_base_path->": odoo_base_path,
     }
 
