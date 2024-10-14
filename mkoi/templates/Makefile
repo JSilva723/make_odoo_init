@@ -10,7 +10,7 @@ down: ## Stop and remove containers
 	@docker compose down
 
 logs: ## Show logs from the web container, follow mode
-	@docker-compose logs -f web
+	@tail -f ${PWD}/web/data/odoo-server.log
 
 version: ## Switch odoo version - changed files: settings.json, docker-compose.yaml, Makefile, Dockerfile
 	@sed -i '' "s/odoo-base\/[0-9]*\.[0-9]*/odoo-base\/$${v}/g" .vscode/settings.json;

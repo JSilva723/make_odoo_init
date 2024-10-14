@@ -28,12 +28,11 @@ make detach # make up
     ├── .vscode
     |    ├── launch.json
     |    └── settings.json
-    ├── db
-    |    └── data/
+    ├── db/
     ├── web
     |    ├── addons
     |    |    └── ...
-    |    ├── filestore/
+    |    ├── data/
     |    └── odoo.conf
     ├── docker-compose.yml
     ├── Dockerfile

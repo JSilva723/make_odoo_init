@@ -7,7 +7,7 @@ services:
       - POSTGRES_USER=odoo
       - POSTGRES_PASSWORD=odoo
     volumes:
-      - ./db/data:/var/lib/postgresql/data
+      - ./db:/var/lib/postgresql/data
       - /dev/shm:/dev/shm
     ports:
       - "5432:5432"
@@ -28,10 +28,10 @@ services:
       - USER=odoo
       - PASSWORD=odoo
       - PYTHONDONTWRITEBYTECODE=1
-    command: /usr/bin/python3 -m debugpy --listen 0.0.0.0:5678 /usr/bin/odoo --db_user=odoo --db_host=db --db_password=odoo
+    command: /usr/bin/python3 -m debugpy --listen 0.0.0.0:5678 /usr/bin/odoo --db_user=odoo --db_host=db --db_password=odoo --dev=reload
     volumes:
-      - ./web/odoo.conf:/etc/odoo/odoo.conf
-      - ./web/filestore:/var/lib/odoo/filestore
+      - ./web/odoo.conf:/etc/odoo/odoo.conf:cached
+      - ./web/data:/mnt/odoo-data:cached
       - ./web/addons:/mnt/extra-addons
       - /dev/shm:/dev/shm
     # user: "${UID}:${GID}"
