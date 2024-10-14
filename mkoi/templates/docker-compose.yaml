@@ -7,7 +7,7 @@ services:
       - POSTGRES_USER=odoo
       - POSTGRES_PASSWORD=odoo
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ./db:/var/lib/postgresql/data:cached
       - /dev/shm:/dev/shm
     ports:
       - "5432:5432"
@@ -32,6 +32,7 @@ services:
     volumes:
       - ./web/odoo.conf:/etc/odoo/odoo.conf:cached
       - ./web/data:/mnt/odoo-data:cached
-      - ./web/addons:/mnt/extra-addons
+      - ./web/addons:/mnt/extra-addons:cached
       - /dev/shm:/dev/shm
     # user: "${UID}:${GID}"
+    restart: always

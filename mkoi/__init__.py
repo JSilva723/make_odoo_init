@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import shutil
+import argparse
 
 def ask_inputs():
     odoo_image = input("Please, specify Odoo image (odoo): ") or "odoo"
@@ -33,16 +34,22 @@ def copy_template_and_replace(template_dir, project_dir, replacements):
             replace_values_in_file(file_path, replacements)
 
 def main():
-    odoo_image, odoo_version, postgres_version, odoo_base_path = ask_inputs()
+    parser = argparse.ArgumentParser(description="Create a new Odoo project")
+    parser.add_argument("project_name", help="The name of the project to create")
+    args = parser.parse_args()
+
+    project_name = args.project_name
+
+    # Get path where command is executed
+    root_dir = os.getcwd()
+    project_dir = os.path.join(root_dir, project_name)
 
     # Get template path
     script_dir = os.path.dirname(os.path.abspath(__file__))
     template_dir = os.path.join(script_dir, "templates")
 
-    # Get path where command is executed
-    root_dir = os.getcwd()
-    project_dir = os.path.join(root_dir, odoo_image)
-
+    # Get inputs values
+    odoo_image, odoo_version, postgres_version, odoo_base_path = ask_inputs()
     replacements = {
         "<-mk_init_odoo_version->": odoo_version,
         "<-mk_init_postgres_version->": postgres_version,

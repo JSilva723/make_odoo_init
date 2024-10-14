@@ -32,17 +32,23 @@
    pip install .
    ```
 
+3. Add python-packages PATH in .bashrc or .zshrc
+
+   ```bash
+   export PATH=$PATH:/home/user/Library/Python/3.9/bin # this is an example
+   ```
+
 ## Usage
 
 Once installed, you can use the command `mkoi` to generate a new Odoo project scaffold:
 
-```bash
-mkoi
-```
+   ```bash
+   mkoi my_project
+   ```
 
 This will prompt you to enter:
 
-1. **Project Name**: The name of your new project.
+1. **Odoo image**: The image of Odoo for new project (odoo).
 2. **Odoo Version**: The version of Odoo you want to use (`17.0`).
 3. **PostgreSQL Version**: The version of PostgreSQL (`13.0`).
 4. **Odoo Base Path**: The base path where Odoo is installed.
@@ -52,8 +58,8 @@ After entering the values, the tool will generate a project structure based on t
 ## Example
 
 ```bash
-$ mkoi
-Please, specify Odoo image: odoo
+$ mkoi my_project
+Please, specify Odoo image (odoo):
 Please, specify Odoo version (17.0):
 Please, specify PostgreSQL version (13.0):
 Please, specify odoo base path: /home/user/odoo/17.0
@@ -90,6 +96,12 @@ If you're using **Visual Studio Code** for development, we recommend using the f
 - **VS Marketplace Link**: [Pyright - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-pyright.pyright)
 
 This extension provides static type checking for Python in VS Code, helping catch potential errors early in the development process.
+
+## Uninstall
+
+```sh
+pip uninstall make-odoo-init
+```
 
 ## License
 
